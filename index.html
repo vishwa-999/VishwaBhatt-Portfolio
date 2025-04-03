@@ -67,6 +67,24 @@
       border: none;
       color: var(--primary-color);
     }
+    .project-button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 15px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .project-content {
+      display: none;
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.03);
+      padding: 15px;
+      border-left: 3px solid var(--primary-color);
+    }
   </style>
 </head>
 <body>
@@ -86,25 +104,17 @@
     </p>
   </div>
 
-  <div class="section" id="modelling">
-    <h2>Financial Modelling & Strategic Projects</h2>
-    <ul>
-      <li><strong>Boiler Efficiency Analytics</strong> – Created ROI & variance dashboards to improve operational cost efficiency.</li>
-      <li><strong>Forecasting Model (ERP Integrated)</strong> – Forecasted material costs using Python-based trend analysis and ERP inputs.</li>
-      <li><strong>Revenue-Expense Modelling</strong> – Built automated dashboards for monthly financial insights across business units.</li>
-      <li><strong>Business Unit P&L Automation</strong> – Developed snapshot generators for decision-making in multi-department environments.</li>
-      <li><strong>Price Prediction Model</strong> – Applied regression to predict price sensitivity across vendor groups.</li>
-      <li><strong>Vehicle Health Speed Analysis</strong> – Identified optimal speed for fleet health using correlation & clustering.</li>
-      <li><strong>Intro to Financial Systems</strong> – Compiled summary guides on IFRS, GAAP & Indian Accounting for training new finance hires.</li>
-    </ul>
-  </div>
-
   <div class="section" id="projects">
     <h2>Highlighted Data Science Projects</h2>
-    <ul>
-      <li><strong>Stock Price Prediction Model</strong> – Analyzed tech stocks (MSFT, AMZN, AAPL, GOOG, FB) over six months using Python, Pandas, and Matplotlib. Derived and visualized returns, volatility, and correlations to evaluate investment behavior.</li>
-      <li><strong>Forex Forecasting & Trend Analysis</strong> – Built a forecasting model for major currency pairs using historical data, moving averages, and machine learning (ARIMA, Prophet) to predict short-term price movements.</li>
-    </ul>
+    <button class="project-button" onclick="toggleContent('stock-project')">📊 Stock Price Prediction</button>
+    <div class="project-content" id="stock-project">
+      <p><strong>Stock Price Prediction Model</strong> – Analyzed tech stocks (MSFT, AMZN, AAPL, GOOG, FB) over six months using Python, Pandas, and Matplotlib. Derived and visualized returns, volatility, and correlations to evaluate investment behavior. Included line plots, moving averages, and volatility charts to help in predicting trend reversals.</p>
+    </div>
+
+    <button class="project-button" onclick="toggleContent('forex-project')">💱 Forex Forecasting</button>
+    <div class="project-content" id="forex-project">
+      <p><strong>Forex Forecasting & Trend Analysis</strong> – Built a forecasting model for major currency pairs using historical data, moving averages, and time series models like ARIMA and Prophet. The model provided predictions, seasonality insights, and variance bands to evaluate high-risk windows in forex trading.</p>
+    </div>
   </div>
 
   <div class="section contact" id="contact">
@@ -117,6 +127,10 @@
   <script>
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
+    }
+    function toggleContent(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
   </script>
 
