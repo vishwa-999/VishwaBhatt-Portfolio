@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vishwa Bhatt | Finance & Strategy Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    :root {
+      --bg-color: #fdfaf7;
+      --text-color: #222;
+      --primary-color: #721817;
+    }
+    .dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --primary-color: #ff6f61;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -16,7 +25,7 @@
       transition: background 0.3s, color 0.3s;
     }
     h1, h2 {
-      color: #004b7c;
+      color: var(--primary-color);
     }
     h1 {
       font-size: 2rem;
@@ -44,7 +53,7 @@
       text-decoration: underline;
     }
     .tagline {
-      color: #444;
+      color: #555;
       font-size: 1.1rem;
       margin-top: 0.5rem;
     }
@@ -52,26 +61,17 @@
       position: fixed;
       top: 10px;
       right: 20px;
-      padding: 6px 12px;
-      border: none;
       cursor: pointer;
-      background-color: #004b7c;
-      color: #fff;
-      border-radius: 4px;
-    }
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #222;
-    }
-    .dark-mode {
-      --bg-color: #121212;
-      --text-color: #eee;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--primary-color);
     }
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Switch Theme">💹</button>
 
   <h1>Vishwa Bhatt</h1>
   <p class="tagline">ACCA Finalist | MSc Financial Technology (UK) | Finance & Data Strategy Expert</p>
@@ -82,23 +82,21 @@
       I am a finance and strategy professional with over 7 years of experience across financial reporting, commercial analysis, business process re-engineering, and strategic data-driven transformation. Holding a Master’s in Finance and an MSc in Financial Technology from the University of Reading, UK, I specialise in combining core finance with advanced analytics to solve real business challenges.
     </p>
     <p>
-      My passion lies in leveraging tools like Excel, Python, and ERP systems to optimise business models, deliver actionable insights, and enhance decision-making through KPI dashboards, forecasting models, and automation.
+      I apply tools like Excel, Python, Power BI, and ERP systems to optimise operations, create actionable insights, and automate forecasting and variance models.
     </p>
   </div>
 
   <div class="section" id="modelling">
     <h2>Financial Modelling & Strategic Projects</h2>
     <ul>
-      <li><strong>Boiler Efficiency Analytics</strong> – Created ROI & variance dashboards using Excel and Power BI to reduce operational costs.</li>
-      <li><strong>Forecasting Model (ERP Integrated)</strong> – Designed a predictive model for material costing and purchase planning using Python + ERP exports.</li>
-      <li><strong>Revenue vs Expense Insights</strong> – Built automated budget tracking sheets with KPIs & variance commentary modules.</li>
-      <li><strong>Business Unit P&L Generator</strong> – Consolidated monthly financials into automated P&L snapshots for 5 departments.</li>
+      <li><strong>Boiler Efficiency Analytics</strong> – Created ROI & variance dashboards to improve operational cost efficiency.</li>
+      <li><strong>Forecasting Model (ERP Integrated)</strong> – Forecasted material costs using Python-based trend analysis and ERP inputs.</li>
+      <li><strong>Revenue-Expense Modelling</strong> – Built automated dashboards for monthly financial insights across business units.</li>
+      <li><strong>Business Unit P&L Automation</strong> – Developed snapshot generators for decision-making in multi-department environments.</li>
+      <li><strong>Price Prediction Model</strong> – Applied regression to predict price sensitivity across vendor groups.</li>
+      <li><strong>Vehicle Health Speed Analysis</strong> – Identified optimal speed for fleet health using correlation & clustering.</li>
+      <li><strong>Intro to Financial Systems</strong> – Compiled summary guides on IFRS, GAAP & Indian Accounting for training new finance hires.</li>
     </ul>
-  </div>
-
-  <div class="section" id="kpi">
-    <h2>KPI Dashboards & Performance Metrics</h2>
-    <canvas id="kpiChart" width="400" height="200"></canvas>
   </div>
 
   <div class="section contact" id="contact">
@@ -109,27 +107,6 @@
   </div>
 
   <script>
-    const ctx = document.getElementById('kpiChart');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Gross Margin %', 'EBITDA %', 'COGS %', 'Inventory Turnover'],
-        datasets: [{
-          label: 'Q1 2024 Performance',
-          data: [42, 28, 15, 9],
-          backgroundColor: '#0077cc'
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
     }
