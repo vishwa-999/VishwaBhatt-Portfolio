@@ -16,6 +16,9 @@
       --text-color: #eee;
       --primary-color: #ff6f61;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -62,10 +65,17 @@
       top: 10px;
       right: 20px;
       cursor: pointer;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       background: none;
       border: none;
       color: var(--primary-color);
+    }
+    .theme-toggle::after {
+      content: '\1F4A1'; /* light bulb */
+    }
+    .dark-mode .theme-toggle::after {
+      content: '\1F4A1';
+      filter: brightness(2);
     }
     .project-button {
       display: inline-block;
@@ -85,11 +95,22 @@
       padding: 15px;
       border-left: 3px solid var(--primary-color);
     }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle" onclick="toggleTheme()" title="Switch Theme">📈</button>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Switch Theme"></button>
 
   <h1>Vishwa Bhatt</h1>
   <p class="tagline">ACCA Finalist | MSc Financial Technology (UK) | Finance & Data Strategy Expert</p>
@@ -106,14 +127,26 @@
 
   <div class="section" id="projects">
     <h2>Highlighted Data Science Projects</h2>
+    <ul>
+      <li><strong>Boiler Efficiency Analytics</strong> – ROI dashboards using Excel and Power BI. <a href="#">GitHub ↗</a></li>
+      <li><strong>Forecasting Model (ERP Integrated)</strong> – Trend analysis using Python. <a href="#">GitHub ↗</a></li>
+      <li><strong>Revenue-Expense Modelling</strong> – Automated financial dashboards. <a href="#">GitHub ↗</a></li>
+      <li><strong>Business Unit P&L Automation</strong> – Departmental P&L generation tool. <a href="#">GitHub ↗</a></li>
+      <li><strong>Price Prediction Model</strong> – Regression-based pricing tool. <a href="#">GitHub ↗</a></li>
+      <li><strong>Vehicle Health Speed Analysis</strong> – Fleet optimization through data. <a href="#">GitHub ↗</a></li>
+      <li><strong>Intro to Financial Systems</strong> – IFRS, GAAP & Indian standards resource. <a href="#">Download ↘</a></li>
+    </ul>
+
     <button class="project-button" onclick="toggleContent('stock-project')">📊 Stock Price Prediction</button>
     <div class="project-content" id="stock-project">
-      <p><strong>Stock Price Prediction Model</strong> – Analyzed tech stocks (MSFT, AMZN, AAPL, GOOG, FB) over six months using Python, Pandas, and Matplotlib. Derived and visualized returns, volatility, and correlations to evaluate investment behavior. Included line plots, moving averages, and volatility charts to help in predicting trend reversals.</p>
+      <p><strong>Stock Price Prediction Model</strong> – Tech stock analysis (MSFT, AMZN, AAPL, GOOG, FB) using Python, Pandas, and Matplotlib. Includes return/volatility visualization and correlation matrix. <a href="#">GitHub Code ↗</a></p>
+      <img src="stock-graph-sample.png" alt="Stock Graph" width="100%">
     </div>
 
     <button class="project-button" onclick="toggleContent('forex-project')">💱 Forex Forecasting</button>
     <div class="project-content" id="forex-project">
-      <p><strong>Forex Forecasting & Trend Analysis</strong> – Built a forecasting model for major currency pairs using historical data, moving averages, and time series models like ARIMA and Prophet. The model provided predictions, seasonality insights, and variance bands to evaluate high-risk windows in forex trading.</p>
+      <p><strong>Forex Forecasting & Trend Analysis</strong> – Forecasts for currency pairs using ARIMA & Prophet. Features prediction confidence bands and seasonality insights. <a href="#">GitHub Code ↗</a></p>
+      <img src="forex-forecast-sample.png" alt="Forex Forecast" width="100%">
     </div>
   </div>
 
@@ -123,6 +156,8 @@
     <p>LinkedIn: <a href="https://www.linkedin.com/in/vishwabhatt/" target="_blank">linkedin.com/in/vishwabhatt</a></p>
     <p><a href="VishwaBhatt_CV.pdf" download>📥 Download My CV</a></p>
   </div>
+
+  <a href="#top" class="back-to-top" title="Back to Top">⬆</a>
 
   <script>
     function toggleTheme() {
