@@ -1,173 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vishwa Bhatt | Finance & Strategy Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #fdfaf7;
-      --text-color: #222;
-      --primary-color: #721817;
-    }
-    .dark-mode {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --primary-color: #ff6f61;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-    }
-    h1, h2 {
-      color: var(--primary-color);
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.2rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .contact a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    .tagline {
-      color: #555;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-    .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: var(--primary-color);
-    }
-    .theme-toggle::after {
-      content: '\1F4A1'; /* light bulb */
-    }
-    .dark-mode .theme-toggle::after {
-      content: '\1F4A1';
-      filter: brightness(2);
-    }
-    .project-button {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 10px 15px;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .project-content {
-      display: none;
-      margin-top: 10px;
-      background-color: rgba(0, 0, 0, 0.03);
-      padding: 15px;
-      border-left: 3px solid var(--primary-color);
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--primary-color);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Vishwa Y Bhatt | Finance & Data Transformation (Growth Curve Theme)</title>
+    <meta name="description" content="Senior Finance Manager / Analyst in the UK (Crawley, West Sussex). Part-qualified ACCA with expertise in FP&A, Power BI, Python, and data-driven transformation. I specialize in driving financial growth and efficiency.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <style>
+        /* ===== GROWTH CURVE COLOR THEME ===== */
+        :root {
+            --color-gc-primary: #00C9A7; /* Electric Teal/Blue - Growth Curve's main accent */
+            --color-gc-secondary: #008779; /* Darker Teal for hover */
+            --color-gc-dark: #0f172a; /* Slate Blue/Navy for main text and backgrounds */
+            --color-gc-light-bg: #f8fafc; /* Very light gray/off-white */
+            --color-gc-accent-bg: #e0f2f1; /* Light teal accent background */
+        }
+        
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-gc-light-bg);
+            color: var(--color-gc-dark);
+        }
+        
+        /* Custom classes (using the new GC colors) */
+        .bg-gc-primary { background-color: var(--color-gc-primary); }
+        .bg-gc-secondary { background-color: var(--color-gc-secondary); }
+        .bg-gc-dark { background-color: var(--color-gc-dark); }
+        .bg-gc-accent-bg { background-color: var(--color-gc-accent-bg); }
+        .text-gc-primary { color: var(--color-gc-primary); }
+        .text-gc-secondary { color: var(--color-gc-secondary); }
+        .text-gc-dark { color: var(--color-gc-dark); }
+        .border-gc-primary { border-color: var(--color-gc-primary); }
+        .hover\:bg-gc-secondary:hover { background-color: var(--color-gc-secondary); }
+        .hover\:text-gc-primary:hover { color: var(--color-gc-primary); }
+        
+        /* Hero section specific style for high impact */
+        .hero-title {
+            background-color: var(--color-gc-accent-bg);
+            padding: 1.5rem 3rem;
+            border-radius: 9999px; /* Pill shape */
+            display: inline-block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gc-secondary);
+            border: 1px solid var(--color-gc-primary);
+        }
+
+        /* Stat Card Styling */
+        .stat-card {
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            height: 100%; 
+            border-radius: 1.5rem; /* More rounded */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px); /* Deeper hover lift */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        .kpi-icon-bg {
+             /* Pill-shaped icon background */
+            background-color: var(--color-gc-primary);
+            color: white;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Project Card Styling */
+        .project-card {
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-  <button class="theme-toggle" onclick="toggleTheme()" title="Switch Theme"></button>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-black text-gc-dark">Vishwa Y Bhatt</a>
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#dashboard" class="text-gray-600 hover:text-gc-primary font-medium">Results</a>
+                <a href="#projects" class="text-gray-600 hover:text-gc-primary font-medium">Projects</a>
+                <a href="#skills" class="text-gray-600 hover:text-gc-primary font-medium">Tech Stack</a>
+                <a href="#career" class="text-gray-600 hover:text-gc-primary font-medium">Journey</a>
+                <a href="#contact" class="bg-gc-primary hover:bg-gc-secondary text-white px-6 py-3 rounded-full font-bold shadow-xl transition duration-300 transform hover:scale-105">
+                    Let's Build Growth
+                </a>
+            </div>
+        </nav>
+    </header>
 
-  <h1>Vishwa Bhatt</h1>
-  <p class="tagline">ACCA Finalist | MSc Financial Technology (UK) | Finance & Data Strategy Expert</p>
+    <main class="container mx-auto px-6 py-16 md:py-24">
 
-  <div class="section" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a finance and strategy professional with over 7 years of experience across financial reporting, commercial analysis, business process re-engineering, and strategic data-driven transformation. Holding a Master’s in Finance and an MSc in Financial Technology from the University of Reading, UK, I specialise in combining core finance with advanced analytics to solve real business challenges.
-    </p>
-    <p>
-      I apply tools like Excel, Python, Power BI, and ERP systems to optimise operations, create actionable insights, and automate forecasting and variance models.
-    </p>
-  </div>
+        <section id="hero" class="text-center">
+            <p class="hero-title mx-auto">
+                Finance & Data Transformation Specialist
+            </p>
+            <h1 class="text-5xl md:text-7xl font-black text-gc-dark leading-snug mt-6 fade-in">
+                I help companies accelerate their <span class="text-gc-primary">financial growth curve</span>.
+            </h1>
+            <p class="mt-8 text-lg md:text-xl text-gray-700 max-w-4xl mx-auto fade-in" style="animation-delay: 0.2s;">
+                Bridging **FP&A rigor** with **FinTech automation** to deliver faster closes, deeper insights, and measurable cost savings (up to £1.4M p.a.). Ready to drive transformation in the UK market.
+            </p>
+            <a href="#contact" class="inline-block bg-gc-primary hover:bg-gc-secondary text-white px-10 py-4 mt-8 rounded-full font-bold text-lg shadow-2xl transition duration-300 transform hover:scale-105">
+                Start Accelerating Today &rarr;
+            </a>
+        </section>
 
-  <div class="section" id="projects">
-    <h2>Highlighted Data Science Projects</h2>
-    <ul>
-      <li><strong>Boiler Efficiency Analytics</strong> – ROI dashboards using Excel and Power BI. <a href="#">GitHub ↗</a></li>
-      <li><strong>Forecasting Model (ERP Integrated)</strong> – Trend analysis using Python. <a href="#">GitHub ↗</a></li>
-      <li><strong>Revenue-Expense Modelling</strong> – Automated financial dashboards. <a href="#">GitHub ↗</a></li>
-      <li><strong>Business Unit P&L Automation</strong> – Departmental P&L generation tool. <a href="#">GitHub ↗</a></li>
-      <li><strong>Price Prediction Model</strong> – Regression-based pricing tool. <a href="#">GitHub ↗</a></li>
-      <li><strong>Vehicle Health Speed Analysis</strong> – Fleet optimization through data. <a href="#">GitHub ↗</a></li>
-      <li><strong>Intro to Financial Systems</strong> – IFRS, GAAP & Indian standards resource. <a href="#">Download ↘</a></li>
-    </ul>
+        <section id="dashboard" class="mt-20 md:mt-28">
+            <h2 class="text-3xl md:text-4xl font-bold text-gc-dark mb-12 text-center">My Proven Impact & Results</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="stat-card bg-white p-6 transition-all duration-300 h-full fade-in">
+                    <div>
+                        <div class="kpi-icon-bg mb-4">
+                            <ion-icon name="wallet-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Identified Savings</p>
+                        <p class="text-3xl font-black text-gc-primary mt-1">~£1.4M p.a.</p>
+                        <p class="text-sm text-gray-600 mt-3">Context: Utility (Fuel) Cost Optimisation & Procurement Analysis implemented across multi-division operations.</p>
+                    </div>
+                </div>
 
-    <button class="project-button" onclick="toggleContent('stock-project')">📊 Stock Price Prediction</button>
-    <div class="project-content" id="stock-project">
-      <p><strong>Stock Price Prediction Model</strong> – Tech stock analysis (MSFT, AMZN, AAPL, GOOG, FB) using Python, Pandas, and Matplotlib. Includes return/volatility visualization and correlation matrix. <a href="#">GitHub Code ↗</a></p>
-      <img src="stock-graph-sample.png" alt="Stock Graph" width="100%">
-    </div>
+                <div class="stat-card bg-white p-6 transition-all duration-300 h-full fade-in" style="animation-delay: 0.1s;">
+                    <div>
+                        <div class="kpi-icon-bg mb-4">
+                            <ion-icon name="speedometer-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Process Automation</p>
+                        <p class="text-3xl font-black text-gc-primary mt-1">60% Time Saved</p>
+                        <p class="text-sm text-gray-600 mt-3">Impact: Cut end-to-end reporting cycle from 5 days to 2 days, significantly reducing human error and improving forecast accuracy.</p>
+                    </div>
+                </div>
 
-    <button class="project-button" onclick="toggleContent('forex-project')">💱 Forex Forecasting</button>
-    <div class="project-content" id="forex-project">
-      <p><strong>Forex Forecasting & Trend Analysis</strong> – Forecasts for currency pairs using ARIMA & Prophet. Features prediction confidence bands and seasonality insights. <a href="#">GitHub Code ↗</a></p>
-      <img src="forex-forecast-sample.png" alt="Forex Forecast" width="100%">
-    </div>
-  </div>
+                <div class="stat-card bg-white p-6 transition-all duration-300 h-full fade-in" style="animation-delay: 0.2s;">
+                    <div>
+                        <div class="kpi-icon-bg mb-4">
+                            <ion-icon name="trending-up-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quant. Portfolio Return</p>
+                        <p class="text-3xl font-black text-gc-primary mt-1">18% Avg. Annual</p>
+                        <p class="text-sm text-gray-600 mt-3">Context: Equity, Commodity, and F&O analysis. Demonstrates robust quantitative modeling and risk-adjusted decision-making.</p>
+                        <div id="chart-portfolio" class="mt-2"></div>
+                    </div>
+                </div>
 
-  <div class="section contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:vishwa9.bhatt@gmail.com">vishwa9.bhatt@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/vishwabhatt/" target="_blank">linkedin.com/in/vishwabhatt</a></p>
-    <p><a href="VishwaBhatt_CV.pdf" download>📥 Download My CV</a></p>
-  </div>
+                <div class="stat-card bg-white p-6 transition-all duration-300 h-full fade-in" style="animation-delay: 0.3s;">
+                    <div>
+                        <div class="kpi-icon-bg mb-4">
+                            <ion-icon name="briefcase-outline" class="text-3xl"></ion-icon>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Executive Advisory</p>
+                        <p class="text-3xl font-black text-gc-primary mt-1">Board-Level Impact</p>
+                        <p class="text-sm text-gray-600 mt-3">Result: Successfully delivered 30+ board packs and strategic financial recommendations adopted by CFOs and Executive teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="mt-20 md:mt-28">
+            <h2 class="text-3xl md:text-4xl font-bold text-gc-dark mb-12 text-center">Data-Driven Transformation Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="project-card bg-white p-8 border-2 border-gc-accent-bg h-full">
+                    <h3 class="text-2xl font-bold text-gc-dark mb-4 flex items-center">
+                        <ion-icon name="alert-circle-outline" class="text-gc-primary mr-3 text-3xl"></ion-icon>
+                        Credit Risk / NPA Classifier
+                    </h3>
+                    <p class="text-gray-700 mb-5 flex-grow">
+                        Built and evaluated Machine Learning models (Random Forest, LogReg) to predict **Non-Performing Asset (NPA) probability**. Focuses on risk-centric metrics crucial for financial governance and proactive lending risk mitigation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold mt-auto">
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">ML Classification</span>
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">Python (Scikit-learn)</span>
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">Risk Modeling</span>
+                    </div>
+                    <a href="https://github.com/vishwa-999/Credit_Risk_ML_Classifier/blob/main/Credit_Risk_Model.ipynb" target="_blank" class="inline-block text-center bg-gc-dark hover:bg-gray-700 text-white px-5 py-3 rounded-full font-medium shadow-lg transition duration-300 mt-6">
+                        View Jupyter Notebook &rarr;
+                    </a>
+                </div>
 
-  <a href="#top" class="back-to-top" title="Back to Top">⬆</a>
+                <div class="project-card bg-white p-8 border-2 border-gc-accent-bg h-full">
+                    <h3 class="text-2xl font-bold text-gc-dark mb-4 flex items-center">
+                        <ion-icon name="analytics-outline" class="text-gc-primary mr-3 text-3xl"></ion-icon>
+                        Automated Portfolio Analyzer
+                    </h3>
+                    <p class="text-gray-700 mb-5 flex-grow">
+                        A quantitative framework analyzing 10 years of multi-asset data (S&P 500, Commodities). Calculates **Sharpe Ratios** and Volatility to compare risk-adjusted strategies, demonstrating deep **quantitative modeling** skills.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold mt-auto">
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">Sharpe Optimization</span>
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">Python (yfinance API)</span>
+                        <span class="bg-gc-accent-bg text-gc-secondary px-3 py-1 rounded-full">Financial Modeling</span>
+                    </div>
+                    <a href="https://github.com/vishwa-999/Financial_Portfolio_Analyzer/blob/main/MultiAsset_Portfolio_Analyzer.ipynb" target="_blank" class="inline-block text-center bg-gc-dark hover:bg-gray-700 text-white px-5 py-3 rounded-full font-medium shadow-lg transition duration-300 mt-6">
+                        View Jupyter Notebook &rarr;
+                    </a>
+                </div>
+                
+            </div>
+            <p class="text-center text-gray-500 text-sm mt-8">These projects showcase a proactive approach to risk management and investment strategy.</p>
+        </section>
+        
+        <section id="trust" class="mt-20 md:mt-28">
+            <h2 class="text-sm font-black text-center text-gray-500 uppercase tracking-widest mb-6">
+                Core Technologies & Strategic Tools
+            </h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-gc-accent-bg">
+                <div class="flex flex-wrap justify-around items-center gap-8 opacity-90">
+                    <span class="text-2xl font-bold text-gc-dark">Power BI</span>
+                    <span class="text-2xl font-bold text-gc-dark">Python (ML)</span>
+                    <span class="text-2xl font-bold text-gc-dark">SQL</span>
+                    <span class="text-2xl font-bold text-gc-dark">FP&A</span>
+                    <span class="text-2xl font-bold text-gc-dark">SAP / ERP</span>
+                    <span class="text-2xl font-bold text-gc-dark">Forecasting</span>
+                </div>
+            </div>
+        </section>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-    }
-    function toggleContent(id) {
-      const el = document.getElementById(id);
-      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
+        <section id="about-home" class="mt-20 md:mt-28 bg-white p-8 md:p-12 rounded-2xl shadow-xl border-2 border-gc-accent-bg">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1">
+                    
+                    <h2 class="text-2xl font-bold text-gc-dark mb-4 mt-6">Vishwa Y Bhatt</h2>
+                    <p class="text-sm text-gray-600">MSc FinTech, University of Reading</p>
+                    <p class="text-sm text-gray-600">ACCA Finalist | 8+ Years Experience</p>
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-gc-dark mb-4">About My Journey</h2>
+                    <p class="text-gray-700 text-lg mb-4">
+                        My career has been dedicated to **driving clarity, building trust, and creating efficiency**. I translate the rigour of **Senior Finance Management** into measurable business outcomes, blending deep FP&A expertise with cutting-edge **FinTech** knowledge.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-6">
+                        Whether it's overseeing month-end close, building forecasting models to improve accuracy by **18%**, or managing complex capital planning, I deliver confident, data-backed strategic decisions. I am based in Crawley and possess full UK work rights.
+                    </p>
+                    <a href="#career" class="font-bold text-gc-primary hover:text-gc-secondary transition duration-300 flex items-center gap-2">
+                        View Detailed Career Timeline &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        <section id="career" class="mt-24 md:mt-32">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gc-dark mb-16">Career Acceleration Timeline</h2>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute left-1/2 w-1.5 bg-gc-primary h-full -ml-1 rounded-full opacity-40"></div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gc-dark shadow-xl w-10 h-10 rounded-full">
+                        <ion-icon name="rocket-outline" class="mx-auto text-white text-xl"></ion-icon>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-xl w-5/12 px-6 py-4 border-2 border-gc-accent-bg">
+                        <p class="text-sm font-bold text-gc-primary">Aug 2024 – Present</p>
+                        <h3 class="font-bold text-gray-900 text-lg">Asst. Manager, Finance & Data</h3>
+                        <p class="text-sm text-gray-600">Agrocel Industries | <span class="font-semibold">60% Automation Achieved</span></p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gc-dark shadow-xl w-10 h-10 rounded-full">
+                        <ion-icon name="briefcase-outline" class="mx-auto text-white text-xl"></ion-icon>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-xl w-5/12 px-6 py-4 border-2 border-gc-accent-bg">
+                        <p class="text-sm font-bold text-gc-primary">Feb 2024 – Aug 2024</p>
+                        <h3 class="font-bold text-gray-900 text-lg">Senior Executive, Finance & Data</h3>
+                        <p class="text-sm text-gray-600">Agrocel Industries | <span class="font-semibold">Process Re-Engineering Focus</span></p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gc-dark shadow-xl w-10 h-10 rounded-full">
+                        <ion-icon name="bar-chart-outline" class="mx-auto text-white text-xl"></ion-icon>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-xl w-5/12 px-6 py-4 border-2 border-gc-accent-bg">
+                        <p class="text-sm font-bold text-gc-primary">Nov 2021 – Dec 2023</p>
+                        <h3 class="font-bold text-gray-900 text-lg">Finance & Business Analyst</h3>
+                        <p class="text-sm text-gray-600">Urban Science (UK) | <span class="font-semibold">Improved Forecast Accuracy by 18%</span></p>
+                    </div>
+                </div>
+                
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gc-dark shadow-xl w-10 h-10 rounded-full">
+                        <ion-icon name="podium-outline" class="mx-auto text-white text-xl"></ion-icon>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-xl w-5/12 px-6 py-4 border-2 border-gc-accent-bg">
+                        <p class="text-sm font-bold text-gc-primary">March 2014 – Sep 2021</p>
+                        <h3 class="font-bold text-gray-900 text-lg">Senior Finance Manager</h3>
+                        <p class="text-sm text-gray-600">Shanro Key Chem | <span class="font-semibold">Full Cycle P&L Ownership</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="mt-20 md:mt-28 bg-gc-dark rounded-3xl shadow-2xl p-8 md:p-16 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">Ready for measurable financial growth?</h2>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Let's discuss how my blend of **FP&A, automation, and leadership** can accelerate your business objectives.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="Vishwah%20Y%20Bhatt_CV.pdf" target="_blank" 
+                   class="bg-gc-primary text-gc-dark font-black py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 text-lg">
+                    Download CV (PDF)
+                </a>
+                <a href="https://calendly.com/YOUR-LINK-HERE" target="_blank"
+                    class="border-2 border-white text-white font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 text-lg">
+                    Schedule a 15-Min Call
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-8 mt-12 text-gray-400">
+                <a href="https://www.linkedin.com/in/vishwabhatt" target="_blank" class="hover:text-gc-primary transition duration-300">
+                    <ion-icon name="logo-linkedin" class="text-5xl"></ion-icon>
+                    <span class="block mt-1 text-sm">LinkedIn</span>
+                </a>
+                <a href="mailto:vishwaybhatt@gmail.com" class="hover:text-gc-primary transition duration-300">
+                    <ion-icon name="mail-outline" class="text-5xl"></ion-icon>
+                    <span class="block mt-1 text-sm">Email</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 mt-12 bg-white border-t border-gray-100">
+        <p class="text-gray-600">&copy; <span id="year"></span> Vishwa Y Bhatt. All rights reserved.</p>
+        <p class="text-gray-500 text-sm mt-1">Based in Crawley, West Sussex | Full UK Work Rights</p>
+    </footer>
+
+    <script>
+        // Simple script to get the current year for the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Chart 1: Portfolio (Sparkline - Updated color to match GC primary)
+        var optionsPortfolio = {
+            series: [{ data: [10, 41, 35, 51, 49, 62, 69, 91, 148] }],
+            chart: { type: 'line', height: 100, sparkline: { enabled: true } },
+            stroke: { curve: 'smooth', width: 3, colors: ['#00C9A7'] }, // GC Primary Color
+            tooltip: {
+                fixed: { enabled: false },
+                x: { show: false },
+                y: { title: { formatter: (seriesName) => 'Return' } },
+                marker: { show: false }
+            }
+        };
+        var chart1 = new ApexCharts(document.querySelector("#chart-portfolio"), optionsPortfolio);
+        chart1.render();
+    </script>
 </body>
 </html>
