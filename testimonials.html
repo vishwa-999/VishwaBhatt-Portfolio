@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwa Bhatt | Stakeholder Trust & Performance Metrics</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== GROWTH CURVE OFFICIAL PALETTE (BLUE) ===== */
+        :root {
+            --color-gc-primary-blue: #275CFF; /* Main buttons, headers */
+            --color-gc-deep-navy: #001A4D; /* Text on light areas */
+            --color-gc-soft-white: #F9FAFF; /* Clean background */
+            --color-gc-accent-light: #E7EEFF; /* Background panels/cards */
+            --color-gc-star: #FFD700; /* Gold for stars */
+            --color-gc-text-light: #4A5568; /* Light gray text for context */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-gc-soft-white);
+            color: var(--color-gc-deep-navy);
+        }
+        
+        /* Custom classes */
+        .bg-gc-primary-blue { background-color: var(--color-gc-primary-blue); }
+        .text-gc-primary-blue { color: var(--color-gc-primary-blue); }
+        .text-gc-deep-navy { color: var(--color-gc-deep-navy); }
+        
+        /* Testimonial Card Styling - Matches the blue card in the image */
+        .testimonial-card-blue {
+            background-color: var(--color-gc-primary-blue);
+            color: var(--color-gc-soft-white); /* White text on blue background */
+            border-radius: 2.5rem; /* Very rounded corners, characteristic of the site */
+            padding: 3rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card-blue:hover {
+            transform: translateY(-5px);
+        }
+        
+        .rating-star {
+            color: var(--color-gc-star); /* Gold stars */
+            font-size: 1.5rem; 
+        }
+
+        /* Metric Card Styling for the breakdown section */
+        .metric-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid var(--color-gc-accent-light);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="max-w-6xl mx-auto">
+
+        <header class="mb-12 border-b-4 border-gc-primary-blue pb-6">
+            <a href="index.html" class="text-sm text-gray-500 hover:text-gc-primary-blue font-semibold">&larr; BACK TO GROWTH PORTFOLIO</a>
+            <h1 class="text-4xl font-black text-gc-deep-navy mt-4">Vishwa's Verified Trust Metrics</h1>
+            <p class="text-xl font-bold text-gray-700">Stakeholder, Executive & Academic Feedback Summary</p>
+            
+            <div class="flex items-center mt-4">
+                <span class="text-4xl font-black text-gc-primary-blue mr-2">4.98</span>
+                <span class="text-3xl rating-star">★★★★★</span>
+                <span class="ml-4 text-gray-600 text-sm font-medium">(Based on 9+ years of internal performance data and executive feedback)</span>
+            </div>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-black mb-8 text-gc-primary-blue">Performance Breakdown: Core Professional Values</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="metric-card">
+                    <span class="text-gray-700 block mb-1">Integrity & Professional Ethics:</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl rating-star">★★★★★</span>
+                        <span class="text-2xl font-black text-gc-deep-navy">5.0</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <span class="text-gray-700 block mb-1">Cross-Functional Collaboration:</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl rating-star">★★★★★</span>
+                        <span class="text-2xl font-black text-gc-deep-navy">4.9</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <span class="text-gray-700 block mb-1">Delivery Consistency & Reliability:</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl rating-star">★★★★☆</span>
+                        <span class="text-2xl font-black text-gc-deep-navy">4.8</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <span class="text-gray-700 block mb-1">Complex Data Communication:</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl rating-star">★★★★★</span>
+                        <span class="text-2xl font-black text-gc-deep-navy">5.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-black mb-8 text-gc-deep-navy">Executive Testimonial Insights</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <div class="testimonial-card-blue p-8">
+                    <div class="flex items-center mb-4">
+                         <span class="text-3xl rating-star mr-3">★★★★★</span>
+                    </div>
+                    
+                    <p class="text-xl font-medium mb-6 italic">"Vishwa consistently demonstrated the highest level of fiduciary responsibility and integrity. His modeling work was the financial foundation for securing major investment approvals."</p>
+                    
+                    <div class="mt-8 pt-4 border-t border-blue-400">
+                        <p class="font-black text-lg text-gc-soft-white">CA Bimal Mehta</p>
+                        <p class="text-sm text-blue-200">Managing Director, Transpek Industries Ltd (Reference)</p>
+                    </div>
+                </div>
+
+                <div class="bg-gc-accent-light p-8 rounded-2xl border-2 border-blue-200">
+                    <p class="text-sm font-black text-gc-primary-blue uppercase mb-2">Academic Insight</p>
+                    <p class="text-lg font-medium text-gc-deep-navy italic">"His dedication to quantitative methods, particularly in Econometrics, positions him as a strong candidate for causal inference roles. He has an innate ability to apply theoretical concepts to real-world impact measurement."</p>
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <p class="font-bold text-lg text-gc-deep-navy">Prof. Simone Verotto</p>
+                        <p class="text-sm text-gray-600">Henley Business School, University of Reading</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gc-accent-light p-8 rounded-2xl border-2 border-blue-200">
+                    <p class="text-sm font-black text-gc-primary-blue uppercase mb-2">Collaboration & Efficiency</p>
+                    <p class="text-lg font-medium text-gc-deep-navy italic">"Vishwa was the trusted bridge between finance and operations. He didn't just deliver data; he partnered with us, ensuring the analytical tools we adopted were practical, clear, and drove positive commercial results."</p>
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <p class="font-bold text-lg text-gc-deep-navy">Former Product/Ops Stakeholder</p>
+                        <p class="text-sm text-gray-600">Urban Science (Team Feedback)</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
